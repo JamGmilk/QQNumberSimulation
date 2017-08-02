@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="qqver">
+        <item>QQ</item>
+        <item>QQ HD</item>
+        <item>QQ 轻聊版</item>
+        <item>QQ 国际版</item>
+        <item>QQ 日本版</item>
+     		<item>Tim</item>
+     		<item>企业QQ</item>
+    </string-array>
+</resources>
