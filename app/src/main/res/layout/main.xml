@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/ll"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="10dp">
+
+		<EditText
+			android:id="@+id/et"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_weight="6"
+			android:hint="请输入QQ号"
+			android:inputType="number"
+			android:ems="10"/>
+
+		<Button
+			android:id="@+id/btn"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="开始"
+			android:layout_weight="1"/>
+
+	</LinearLayout>
+
+	<ScrollView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_below="@id/ll"
+		android:layout_above="@+id/tw"
+		android:background="#212121"
+		android:orientation="vertical"
+		android:elevation="4dp"
+		android:layout_marginTop="10dp"
+		android:padding="10dp">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:text="ROOT状态："/>
+
+			<Button
+				android:id="@+id/rootbtn"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="match_parent"
+				android:gravity="center_horizontal"
+				android:layout_marginTop="16dp"
+				android:layout_marginBottom="16dp"/>
+
+			<View
+				android:background="?android:attr/dividerVertical"
+				android:layout_height="1dp"
+				android:layout_width="match_parent"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:text="食用方法："/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="1.在上方输入框输入想要模拟的QQ号码；\n\n2.点击 “开始” 按钮；\n\n3.打开QQ；\n\n4.打开QQ后，搜索此QQ号码，进入ta的资料页（昵称和显示头像）；\n\n5.在 设置 - 帐号 里面查看刚刚创建的QQ。"
+				android:layout_marginTop="16dp"
+				android:layout_marginBottom="16dp"/>
+
+			<View
+				android:background="?android:attr/dividerVertical"
+				android:layout_height="1dp"
+				android:layout_width="match_parent"
+				android:layout_marginBottom="10dp"
+				android:layout_marginTop="10dp"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:text="QQ 版本："/>
+
+			<Spinner
+				android:id="@+id/sp"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:entries="@array/qqver"
+				android:layout_marginTop="16dp"
+				android:layout_marginBottom="16dp"/>
+
+			<Button
+				android:id="@+id/openqq"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="打开QQ"
+				android:layout_marginTop="16dp"/>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<TextView
+		android:id="@+id/tw"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:text="Copyright © 2016 - 2017 -GJG- . All rights reserved."
+		android:gravity="center"
+		android:layout_alignParentBottom="true"
+		android:layout_marginTop="10dp"/>
+
+</RelativeLayout>
