@@ -15,92 +15,91 @@ import java.lang.Process;
 
 public class Main extends Activity {
 	
-	String dataPath = "/data/data/";
-	String ver = "com.tencent.mobileqq";
-	String number;
-	boolean DEBUG = false;
+	String dataPath = "/data/data/"; // 定义系统数据目录，目录为 /data/data/
+	String ver = "com.tencent.mobileqq"; // 定义QQ版本（默认为 "com.tencent.mobileqq"）
+	String number; // 定义QQ号码
+	boolean DEBUG = false; // 定义调试模式（默认为 “否“ ）
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		
-		
-		final Button rootbtn = (Button) findViewById(R.id.rootbtn);
-		rootbtn.setText("软件没有获取权限");
-		rootbtn.setTextColor(0xFFF44336);
-		rootbtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (check_root()) {
-					rootbtn.setText("已经获取权限");
-					rootbtn.setTextColor(0xFF4CAF50);
-					setbtn();
-				}
+	    
+	final Button rootbtn = (Button) findViewById(R.id.rootbtn);
+	rootbtn.setText("软件没有获取权限"); // 设置按钮上的文字
+	rootbtn.setTextColor(0xFFF44336); // 设置按钮上文字的颜色（MD红）
+	rootbtn.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			/* 如果软件获取到root权限 */
+			if (check_root()) {
+				rootbtn.setText("已经获取权限"); // 设置按钮上的文字
+				rootbtn.setTextColor(0xFF4CAF50); // 设置按钮上文字的颜色（MD绿）
+				setbtn(); // 激活方法
 			}
-		});
-		
-		
-		Button openqq = (Button) findViewById(R.id.openqq);
-		openqq.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				if (DEBUG) Toast.makeText(Main.this, ver + ".activity.SplashActivity",Toast.LENGTH_SHORT).show();
-				return true;
-			}
-		});
-		openqq.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				startActivity(new Intent().setClassName(ver, ver + ".activity.SplashActivity"));
-			}
-		});
-		
-		
-		Spinner sp = (Spinner) findViewById(R.id.sp);
-		String[] mItems = getResources().getStringArray(R.array.qqver);
-		ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, mItems);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		sp.setAdapter(adapter);
-		sp.setOnItemSelectedListener(new OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-				if (pos == 0) ver="com.tencent.mobileqq";
-				if (pos == 1) ver = "com.tencent.minihd.qq";
-				if (pos == 2) ver = "com.tencent.qqlite";
-				if (pos == 3) ver = "com.tencent.mobileqqi";
-				if (pos == 4) ver = "com.tencent.qq.kddi";
-				if (pos == 5) ver = "com.tencent.tim";
-				if (pos == 6) ver = "com.tencent.eim";
-				
-				if (DEBUG) Toast.makeText(Main.this, ver,Toast.LENGTH_SHORT).show();
-				
-			}
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				// Another interface callback
-			}
-		});
-		
-		
-		final TextView tw = (TextView) findViewById(R.id.tw);
-		tw.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				rootbtn.setText("Debug Mode");
-				rootbtn.setTextColor(0xFFFFEB3B);
-				DEBUG = true;
-				setbtn();
-				return true;
-			}
-		});
-		
-		
-		if (check_root()) {
-			rootbtn.setText("已经获取权限");
-			rootbtn.setTextColor(0xFF4CAF50);
-			setbtn();
 		}
+	});
+		
+	Button openqq = (Button) findViewById(R.id.openqq);
+	openqq.setOnLongClickListener(new View.OnLongClickListener() {
+		@Override
+		public boolean onLongClick(View v) {
+			if (DEBUG) Toast.makeText(Main.this, ver + ".activity.SplashActivity",Toast.LENGTH_SHORT).show(); // 如果处于 Debug 模式，长按按钮会弹出Toast，提示启动QQ的活动
+			return true;
+		}
+	});
+	    
+	openqq.setOnClickListener(new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			startActivity(new Intent().setClassName(ver, ver + ".activity.SplashActivity")); // 启动QQ
+		}
+	});
+		
+	Spinner sp = (Spinner) findViewById(R.id.sp);
+	String[] mItems = getResources().getStringArray(R.array.qqver);
+	ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, mItems);
+	adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	sp.setAdapter(adapter);
+	sp.setOnItemSelectedListener(new OnItemSelectedListener() {
+		@Override
+		public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+			if (pos == 0) ver="com.tencent.mobileqq";
+			if (pos == 1) ver = "com.tencent.minihd.qq";
+			if (pos == 2) ver = "com.tencent.qqlite";
+			if (pos == 3) ver = "com.tencent.mobileqqi";
+			if (pos == 4) ver = "com.tencent.qq.kddi";
+			if (pos == 5) ver = "com.tencent.tim";
+			if (pos == 6) ver = "com.tencent.eim";
+				
+			if (DEBUG) Toast.makeText(Main.this, ver,Toast.LENGTH_SHORT).show();
+				
+			}
+		@Override
+		public void onNothingSelected(AdapterView<?> parent) {
+			// Another interface callback
+		}
+	});
+		
+		
+	final TextView tw = (TextView) findViewById(R.id.tw);
+	tw.setOnLongClickListener(new View.OnLongClickListener() {
+		@Override
+		public boolean onLongClick(View v) {
+			rootbtn.setText("Debug Mode");
+			rootbtn.setTextColor(0xFFFFEB3B);
+			DEBUG = true;
+			setbtn();
+			return true;
+		}
+	});
+		
+		
+	if (check_root()) {
+		rootbtn.setText("已经获取权限");
+		rootbtn.setTextColor(0xFF4CAF50);
+		setbtn();
+	}
 		
 		
     }
@@ -128,22 +127,6 @@ public class Main extends Activity {
 			}
 		});
 	}
-	
-	/*public static boolean is_root(){
-		boolean res = false;
-		try{ 
-			if ((!new File("/system/bin/su").exists()) && (!new File("/system/xbin/su").exists())){
-				res = false;
-			} 
-			else {
-				res = true;
-			}
-		} 
-		catch (Exception e) {
-			System.out.println(e.getMessage());
-		} 
-		return res;
-	}*/
 	
 	public boolean run_cmd(String command) {
         Process process = null;
