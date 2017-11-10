@@ -18,3 +18,9 @@
 touch /data/data/com.tencent.mobileqq/files/user/u_12345_t
 
 "touch " + dataPath + ver + "/files/user/" + "u_" + QQNumer + "_t"
+https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/1.png
+https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/2.png
+https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/3.png
+https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/4.png
+https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/5.png
+https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/6.png
