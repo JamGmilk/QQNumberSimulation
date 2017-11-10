@@ -1,7 +1,9 @@
 # QQNumberSimulation
 软件地址：http://www.coolapk.com/apk/com.zzz.QQNumberSimulation
 
+
 注意：本软件需要root权限
+
 
 软件用途：
 
