@@ -1,4 +1,5 @@
-# QQNumberSimulation
+# QQ Number Simulation
+
 软件地址：http://www.coolapk.com/apk/com.zzz.QQNumberSimulation
 
 
@@ -13,14 +14,17 @@
 
 ❸如果在QQ账号管理中登录的QQ太多，账号达到上限QQ不能继续添加。可以使用本软件模拟QQ账号，之后再验证密码即可
 
+
 软件核心代码：
 
 touch /data/data/com.tencent.mobileqq/files/user/u_12345_t
 
 "touch " + dataPath + ver + "/files/user/" + "u_" + QQNumer + "_t"
-![1](https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/1.png)
-![2](https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/2.png)
-![3](https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/3.png)
-![4](https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/4.png)
-![5](https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/5.png)
-![6](https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/6.png)
+
+
+!(https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/1.png)
+!(https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/2.png)
+!(https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/3.png)
+!(https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/4.png)
+!(https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/5.png)
+!(https://github.com/PCGJG/QQNumberSimulation/blob/master/Screenshots/6.png)
